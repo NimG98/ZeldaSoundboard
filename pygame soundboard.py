@@ -10,19 +10,19 @@ screen.fill((200,250,250))
 pygame.display.set_caption('Majora\'s Mask: Instrument Soundboard')
 
 # Titles
-zelda_font = pygame.font.Font('HyliaSerifBeta-Regular.otf', 30)
-zelda_font2 = pygame.font.Font('HyliaSerifBeta-Regular.otf', 25)
+zelda_font = pygame.font.Font('Fonts/HyliaSerifBeta-Regular.otf', 30)
+zelda_font2 = pygame.font.Font('Fonts/HyliaSerifBeta-Regular.otf', 25)
 title = zelda_font.render('Majora\'s Mask', True, (150,0,255))
 song_list_title = zelda_font2.render('Song List', True, (0,0,0))
 screen.blit(title, (10,0))
 screen.blit(song_list_title, (20,250))
 
 # Images
-intro_image = pygame.image.load('Majora\'s_Mask.png')
+intro_image = pygame.image.load('Images/Characters/Majora\'s_Mask.png')
 screen.blit(intro_image, (175, 50))
 pygame.display.set_icon(intro_image)
 
-staff = pygame.image.load('oot_staff.png')
+staff = pygame.image.load('Images/Characters/oot_staff.png')
 screen.blit(staff, (25, 500))
 
 ############## Rectangle Button Creation ##############
@@ -51,7 +51,7 @@ instrument = 'OCARINA'
 
 # Instrument Button Features
 button_size = (120, 30)
-button_font = pygame.font.Font('FRABK_0.TTF', 25)
+button_font = pygame.font.Font('Fonts/FRABK_0.TTF', 25)
 
 button_x = 25
 button_y = 60
@@ -68,13 +68,13 @@ def instrument_pic(instrument):
     replacement_rec = pygame.Rect((175, 50), (160, 140))
     replacement = pygame.draw.rect(screen, (200,250,250), replacement_rec)
     if instrument == 'OCARINA':
-        image = pygame.image.load('ocarina.png')
+        image = pygame.image.load('Images/Characters/ocarina.png')
     elif instrument == 'PIPES':
-        image = pygame.image.load('Pipes_of_Awakening.png')
+        image = pygame.image.load('Images/Characters/Pipes_of_Awakening.png')
     elif instrument == 'DRUMS':
-        image = pygame.image.load('drums goron.png')
+        image = pygame.image.load('Images/Characters/drums goron.png')
     elif instrument == 'GUITAR':
-        image = pygame.image.load('Guitar_of_Waves.png')
+        image = pygame.image.load('Images/Characters/Guitar_of_Waves.png')
     screen.blit(image, (175, 50))
     pygame.display.update()
 
@@ -83,11 +83,11 @@ def instrument_pic(instrument):
 
 # Controller Music Buttons
 
-a_button_pic = pygame.image.load('a_button.png')
-c_left_pic = pygame.image.load('l_c.png')
-c_right_pic = pygame.image.load('r_c.png')
-c_down_pic = pygame.image.load('d_c.png')
-c_up_pic = pygame.image.load('u_c.png')
+a_button_pic = pygame.image.load('Images/Note_Button_Pics/a_button.png')
+c_left_pic = pygame.image.load('Images/Note_Button_Pics/l_c.png')
+c_right_pic = pygame.image.load('Images/Note_Button_Pics/r_c.png')
+c_down_pic = pygame.image.load('Images/Note_Button_Pics/d_c.png')
+c_up_pic = pygame.image.load('Images/Note_Button_Pics/u_c.png')
 
 button_pics = {a_button_pic: (345, 135) , c_left_pic: (350, 57),
                c_right_pic: (450, 60), c_down_pic: (400, 100),
@@ -113,13 +113,13 @@ def note_D1(instrument):
     Note D1 plays when the a_button is pressed.
     '''
     if instrument == 'OCARINA':
-        sound = pygame.mixer.Sound('OOT_Notes_Ocarina_D_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/OOT_Notes_Ocarina_D_med.wav')
     elif instrument == 'PIPES':
-        sound = pygame.mixer.Sound('MM_Notes_Pipes_D_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Pipes_D_med.wav')
     elif instrument == 'DRUMS':
-        sound = pygame.mixer.Sound('MM_Notes_Drums_D_long.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Drums_D_long.wav')
     elif instrument == 'GUITAR':
-        sound = pygame.mixer.Sound('MM_Notes_Guitar_D_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Guitar_D_med.wav')
     sound.play()
     
 def note_F(instrument):
@@ -128,13 +128,13 @@ def note_F(instrument):
     Note F plays when the c_down button is pressed.
     '''
     if instrument == 'OCARINA':
-        sound = pygame.mixer.Sound('OOT_Notes_Ocarina_F_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/OOT_Notes_Ocarina_F_med.wav')
     elif instrument == 'PIPES':
-        sound = pygame.mixer.Sound('MM_Notes_Pipes_F_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Pipes_F_med.wav')
     elif instrument == 'DRUMS':
-        sound = pygame.mixer.Sound('MM_Notes_Drums_F_long.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Drums_F_long.wav')
     elif instrument == 'GUITAR':
-        sound = pygame.mixer.Sound('MM_Notes_Guitar_F_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Guitar_F_med.wav')
     sound.play()
 
 
@@ -144,13 +144,13 @@ def note_A(instrument):
     Note A plays when the c_right button is pressed.
     '''
     if instrument == 'OCARINA':
-        sound = pygame.mixer.Sound('OOT_Notes_Ocarina_A_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/OOT_Notes_Ocarina_A_med.wav')
     elif instrument == 'PIPES':
-        sound = pygame.mixer.Sound('MM_Notes_Pipes_A_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Pipes_A_med.wav')
     elif instrument == 'DRUMS':
-        sound = pygame.mixer.Sound('MM_Notes_Drums_A_long.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Drums_A_long.wav')
     elif instrument == 'GUITAR':
-        sound = pygame.mixer.Sound('MM_Notes_Guitar_A_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Guitar_A_med.wav')
     sound.play()
 
 def note_B(instrument):
@@ -159,13 +159,13 @@ def note_B(instrument):
     Note B plays when the c_left button is pressed.
     '''
     if instrument == 'OCARINA':
-        sound = pygame.mixer.Sound('OOT_Notes_Ocarina_B_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/OOT_Notes_Ocarina_B_med.wav')
     elif instrument == 'PIPES':
-        sound = pygame.mixer.Sound('MM_Notes_Pipes_B_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Pipes_B_med.wav')
     elif instrument == 'DRUMS':
-        sound = pygame.mixer.Sound('MM_Notes_Drums_B_long.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Drums_B_long.wav')
     elif instrument == 'GUITAR':
-        sound = pygame.mixer.Sound('MM_Notes_Guitar_B_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Guitar_B_med.wav')
     sound.play()
 
 def note_D2(instrument):
@@ -174,13 +174,13 @@ def note_D2(instrument):
     Note D2 plays when the a_button is pressed.
     '''
     if instrument == 'OCARINA':
-        sound = pygame.mixer.Sound('OOT_Notes_Ocarina_D2_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/OOT_Notes_Ocarina_D2_med.wav')
     elif instrument == 'PIPES':
-        sound = pygame.mixer.Sound('MM_Notes_Pipes_D2_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Pipes_D2_med.wav')
     elif instrument == 'DRUMS':
-        sound = pygame.mixer.Sound('MM_Notes_Drums_D2_long.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Drums_D2_long.wav')
     elif instrument == 'GUITAR':
-        sound = pygame.mixer.Sound('MM_Notes_Guitar_D2_med.wav')
+        sound = pygame.mixer.Sound('Instrument_Sounds/MM_Notes_Guitar_D2_med.wav')
     sound.play()
 
 
@@ -210,7 +210,7 @@ song = None
 # Song Button Features
 button_size = (140, 30)
 button_x, button_y = 25, 300
-button_font = pygame.font.Font('FRABK_0.TTF', 13)
+button_font = pygame.font.Font('Fonts/FRABK_0.TTF', 13)
 
 song_titles = ['Song of Time', 'Song of Double Time', 'Inverted Song of Time',
                'Song of Healing', 'Song of Storms', 'Epona\'s Song',
