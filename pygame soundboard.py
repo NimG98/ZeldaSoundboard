@@ -41,7 +41,7 @@ def rec_buttons(size, font, x, y, title_list, button_list):
         if len(title) < 8:
             screen.blit(text, (x + 12, y))
         else:
-            screen.blit(text, (x + 2, y + 7))
+            screen.blit(text, (x + 5, y + 7))
         y += 40
 
 
