@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 pygame.init()
 
@@ -338,4 +339,5 @@ if __name__ == '__main__':
                 play_song(mouse_pos)
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
 
